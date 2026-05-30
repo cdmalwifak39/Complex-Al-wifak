@@ -1,0 +1,1621 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>المجمع الطبي الوفاق | Complexe Médical Al Wifak</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #C8972A;
+    --gold-light: #E8B84B;
+    --dark: #1a1a2e;
+    --darker: #0f0f1a;
+    --white: #ffffff;
+    --off-white: #f8f6f1;
+    --teal: #2A7C76;
+    --teal-light: #3aa89f;
+    --gray: #6b7280;
+    --light-gray: #f3f4f6;
+    --card-bg: #ffffff;
+    --shadow: 0 8px 40px rgba(0,0,0,0.10);
+    --shadow-hover: 0 16px 60px rgba(200,151,42,0.18);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Tajawal', sans-serif;
+    background: var(--off-white);
+    color: var(--dark);
+    overflow-x: hidden;
+  }
+
+  /* LANGUAGE TOGGLE */
+  .lang-bar {
+    background: var(--darker);
+    padding: 8px 40px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 12px;
+  }
+  .lang-btn {
+    background: none;
+    border: 1px solid rgba(255,255,255,0.3);
+    color: rgba(255,255,255,0.7);
+    padding: 4px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: 'Raleway', sans-serif;
+    font-size: 13px;
+    transition: all 0.3s;
+    letter-spacing: 1px;
+  }
+  .lang-btn.active {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: white;
+  }
+
+  /* HERO */
+  .hero {
+    background: var(--darker);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('/mnt/user-data/uploads/WhatsApp_Image_2026-05-30_at_11_26_36_AM.jpeg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.18;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(15,15,26,0.97) 40%, rgba(42,124,118,0.3) 100%);
+  }
+
+  /* NAV */
+  nav {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 28px 60px;
+    border-bottom: 1px solid rgba(200,151,42,0.15);
+  }
+
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .logo-icon {
+    width: 56px;
+    height: 56px;
+    background: var(--gold);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    color: white;
+    font-weight: 900;
+    font-family: 'Raleway', sans-serif;
+    letter-spacing: -1px;
+    box-shadow: 0 4px 20px rgba(200,151,42,0.4);
+  }
+
+  .logo-text-ar {
+    font-size: 20px;
+    font-weight: 700;
+    color: white;
+    line-height: 1.2;
+  }
+  .logo-text-fr {
+    font-size: 11px;
+    color: var(--gold);
+    font-family: 'Raleway', sans-serif;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+  }
+  .nav-links a {
+    color: rgba(255,255,255,0.75);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    transition: color 0.3s;
+    position: relative;
+  }
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    right: 0;
+    width: 0;
+    height: 2px;
+    background: var(--gold);
+    transition: width 0.3s;
+  }
+  .nav-links a:hover { color: var(--gold); }
+  .nav-links a:hover::after { width: 100%; }
+
+  /* HERO CONTENT */
+  .hero-content {
+    position: relative;
+    z-index: 5;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 40px;
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background: rgba(200,151,42,0.15);
+    border: 1px solid rgba(200,151,42,0.4);
+    color: var(--gold);
+    padding: 8px 24px;
+    border-radius: 30px;
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-family: 'Raleway', sans-serif;
+    margin-bottom: 30px;
+    animation: fadeDown 0.8s ease both;
+  }
+
+  .hero-title-ar {
+    font-size: clamp(42px, 7vw, 80px);
+    font-weight: 900;
+    color: white;
+    line-height: 1.1;
+    margin-bottom: 8px;
+    animation: fadeDown 0.8s 0.1s ease both;
+  }
+  .hero-title-ar span { color: var(--gold); }
+
+  .hero-title-fr {
+    font-family: 'Raleway', sans-serif;
+    font-size: clamp(14px, 2vw, 20px);
+    font-weight: 300;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+    animation: fadeDown 0.8s 0.2s ease both;
+  }
+
+  .hero-hours {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    padding: 14px 30px;
+    border-radius: 50px;
+    color: rgba(255,255,255,0.85);
+    font-size: 16px;
+    margin-bottom: 50px;
+    animation: fadeDown 0.8s 0.3s ease both;
+  }
+  .hours-dot {
+    width: 10px; height: 10px;
+    background: #22c55e;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%,100% { box-shadow: 0 0 0 0 rgba(34,197,94,0.5); }
+    50% { box-shadow: 0 0 0 8px rgba(34,197,94,0); }
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 60px;
+    animation: fadeDown 0.8s 0.4s ease both;
+  }
+  .stat { text-align: center; }
+  .stat-num {
+    font-size: 40px;
+    font-weight: 900;
+    color: var(--gold);
+    line-height: 1;
+    font-family: 'Raleway', sans-serif;
+  }
+  .stat-label {
+    font-size: 13px;
+    color: rgba(255,255,255,0.5);
+    margin-top: 4px;
+  }
+
+  .hero-scroll {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: rgba(255,255,255,0.3);
+    font-size: 12px;
+    font-family: 'Raleway', sans-serif;
+    letter-spacing: 2px;
+    animation: bounce 2s infinite;
+  }
+  .scroll-line {
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, transparent, var(--gold));
+  }
+
+  @keyframes bounce {
+    0%,100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(8px); }
+  }
+  @keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* SECTION COMMON */
+  section { padding: 100px 60px; }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 70px;
+  }
+  .section-tag {
+    font-family: 'Raleway', sans-serif;
+    font-size: 12px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+    display: block;
+  }
+  .section-title-ar {
+    font-size: clamp(28px, 4vw, 44px);
+    font-weight: 900;
+    color: var(--dark);
+    margin-bottom: 6px;
+  }
+  .section-title-fr {
+    font-family: 'Raleway', sans-serif;
+    font-size: 14px;
+    color: var(--gray);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+  .section-line {
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(to left, var(--gold), var(--gold-light));
+    margin: 20px auto 0;
+    border-radius: 2px;
+  }
+
+  /* DEPARTMENTS NAV */
+  .dept-nav {
+    background: var(--dark);
+    padding: 0;
+    display: flex;
+    overflow-x: auto;
+    scrollbar-width: none;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .dept-nav::-webkit-scrollbar { display: none; }
+  .dept-tab {
+    flex: 1;
+    min-width: 160px;
+    padding: 20px 24px;
+    background: none;
+    border: none;
+    border-bottom: 3px solid transparent;
+    color: rgba(255,255,255,0.5);
+    font-family: 'Tajawal', sans-serif;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    white-space: nowrap;
+  }
+  .dept-tab .icon { font-size: 20px; }
+  .dept-tab:hover { color: white; background: rgba(255,255,255,0.05); }
+  .dept-tab.active {
+    color: var(--gold);
+    border-bottom-color: var(--gold);
+    background: rgba(200,151,42,0.08);
+  }
+
+  /* SECTIONS */
+  .dept-section { display: none; }
+  .dept-section.active { display: block; }
+
+  /* DOCTORS GRID */
+  #clinics { background: var(--off-white); }
+
+  .doctors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 28px;
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+
+  .doctor-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid rgba(0,0,0,0.04);
+    position: relative;
+  }
+  .doctor-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-hover);
+  }
+
+  .card-header {
+    background: linear-gradient(135deg, var(--dark) 0%, #2d3555 100%);
+    padding: 24px 28px 20px;
+    position: relative;
+    overflow: hidden;
+  }
+  .card-header::before {
+    content: '';
+    position: absolute;
+    top: -30px;
+    left: -30px;
+    width: 120px;
+    height: 120px;
+    background: rgba(200,151,42,0.1);
+    border-radius: 50%;
+  }
+
+  .room-badge {
+    position: absolute;
+    top: 16px;
+    left: 20px;
+    background: var(--gold);
+    color: white;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    letter-spacing: 1px;
+  }
+
+  .doctor-avatar {
+    width: 54px;
+    height: 54px;
+    background: linear-gradient(135deg, var(--teal), var(--teal-light));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    color: white;
+    margin-bottom: 14px;
+    box-shadow: 0 4px 15px rgba(42,124,118,0.4);
+  }
+
+  .doctor-name {
+    font-size: 20px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 4px;
+    position: relative;
+  }
+  .doctor-specialty {
+    font-size: 13px;
+    color: var(--gold-light);
+    font-weight: 500;
+    position: relative;
+  }
+
+  .card-body { padding: 22px 28px; }
+
+  .services-list {
+    list-style: none;
+    margin-bottom: 18px;
+  }
+  .services-list li {
+    font-size: 13px;
+    color: var(--gray);
+    padding: 5px 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    border-bottom: 1px solid rgba(0,0,0,0.04);
+  }
+  .services-list li:last-child { border-bottom: none; }
+  .services-list li::before {
+    content: '◆';
+    color: var(--gold);
+    font-size: 8px;
+    margin-top: 4px;
+    flex-shrink: 0;
+  }
+
+  .card-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 16px;
+    border-top: 1px solid var(--light-gray);
+  }
+
+  .info-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 13px;
+    color: var(--gray);
+  }
+  .info-icon {
+    width: 28px;
+    height: 28px;
+    background: var(--light-gray);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    flex-shrink: 0;
+  }
+  .info-text { flex: 1; line-height: 1.5; }
+
+  .call-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, var(--teal), var(--teal-light));
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-family: 'Tajawal', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s;
+    margin-top: 16px;
+  }
+  .call-btn:hover {
+    background: linear-gradient(135deg, var(--teal-light), var(--teal));
+    transform: scale(1.02);
+    box-shadow: 0 6px 20px rgba(42,124,118,0.4);
+  }
+
+  /* WIFAK SECTION */
+  #wifak { background: white; }
+
+  .wifak-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .wifak-card {
+    background: linear-gradient(135deg, var(--dark), #1e2d5a);
+    border-radius: 24px;
+    padding: 40px 36px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s;
+  }
+  .wifak-card:hover { transform: translateY(-6px); }
+  .wifak-card::before {
+    content: '';
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    width: 150px;
+    height: 150px;
+    background: rgba(200,151,42,0.12);
+    border-radius: 50%;
+  }
+  .wifak-icon { font-size: 48px; margin-bottom: 20px; }
+  .wifak-name { font-size: 20px; font-weight: 700; margin-bottom: 6px; }
+  .wifak-spec { font-size: 13px; color: var(--gold); margin-bottom: 20px; font-weight: 500; }
+  .wifak-call {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 12px;
+    padding: 12px 18px;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.3s;
+  }
+  .wifak-call:hover {
+    background: var(--gold);
+    border-color: var(--gold);
+  }
+
+  /* LABS SECTION */
+  #labs { background: var(--off-white); }
+
+  .labs-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .lab-card {
+    background: white;
+    border-radius: 24px;
+    padding: 40px 36px;
+    box-shadow: var(--shadow);
+    border-top: 5px solid var(--gold);
+    transition: transform 0.3s;
+  }
+  .lab-card:hover { transform: translateY(-6px); }
+  .lab-icon { font-size: 48px; margin-bottom: 20px; }
+  .lab-name { font-size: 21px; font-weight: 700; color: var(--dark); margin-bottom: 6px; }
+  .lab-spec { font-size: 13px; color: var(--teal); font-weight: 600; margin-bottom: 16px; }
+  .lab-services { list-style: none; margin-bottom: 20px; }
+  .lab-services li {
+    font-size: 13px;
+    color: var(--gray);
+    padding: 5px 0;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+  .lab-services li::before {
+    content: '●';
+    color: var(--gold);
+    font-size: 7px;
+  }
+
+  /* IMAGING SECTION */
+  #imaging { background: white; }
+
+  .imaging-card {
+    max-width: 900px;
+    margin: 0 auto;
+    background: linear-gradient(135deg, var(--dark) 0%, #0f2027 100%);
+    border-radius: 30px;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    box-shadow: 0 20px 80px rgba(0,0,0,0.25);
+  }
+
+  .imaging-left {
+    padding: 60px 50px;
+    color: white;
+  }
+  .imaging-logo-text {
+    font-family: 'Raleway', sans-serif;
+    font-size: 13px;
+    letter-spacing: 4px;
+    color: var(--gold);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+  }
+  .imaging-title {
+    font-size: 28px;
+    font-weight: 900;
+    margin-bottom: 8px;
+  }
+  .imaging-subtitle {
+    font-family: 'Raleway', sans-serif;
+    font-size: 12px;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+  }
+  .imaging-contact { display: flex; flex-direction: column; gap: 12px; margin-top: 30px; }
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+    color: rgba(255,255,255,0.7);
+  }
+  .contact-icon {
+    width: 34px;
+    height: 34px;
+    background: rgba(200,151,42,0.15);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+  }
+
+  .imaging-right {
+    padding: 50px 40px;
+    background: rgba(255,255,255,0.04);
+    border-right: 1px solid rgba(255,255,255,0.06);
+  }
+  .imaging-right h3 {
+    color: var(--gold);
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-family: 'Raleway', sans-serif;
+    margin-bottom: 24px;
+  }
+  .imaging-services { list-style: none; }
+  .imaging-services li {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    color: rgba(255,255,255,0.8);
+    font-size: 15px;
+  }
+  .imaging-services li:last-child { border-bottom: none; }
+  .svc-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--gold);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  /* MAP SECTION */
+  .map-section {
+    background: var(--dark);
+    padding: 80px 60px;
+  }
+  .map-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 40px;
+    align-items: center;
+  }
+  .map-info { color: white; }
+  .map-info .section-tag { text-align: right; }
+  .map-info h2 {
+    font-size: 32px;
+    font-weight: 900;
+    margin-bottom: 20px;
+  }
+  .map-detail {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 16px;
+    color: rgba(255,255,255,0.7);
+    font-size: 15px;
+  }
+  .map-detail-icon {
+    width: 36px;
+    height: 36px;
+    background: rgba(200,151,42,0.15);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    flex-shrink: 0;
+  }
+  .map-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--gold);
+    color: white;
+    padding: 14px 28px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 24px;
+    transition: all 0.3s;
+  }
+  .map-link:hover { background: var(--gold-light); transform: scale(1.03); }
+
+  .map-embed {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+    height: 350px;
+  }
+  .map-embed iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--darker);
+    padding: 40px 60px;
+    text-align: center;
+    color: rgba(255,255,255,0.4);
+    font-size: 13px;
+    font-family: 'Raleway', sans-serif;
+    letter-spacing: 1px;
+  }
+  footer span { color: var(--gold); }
+
+  /* FRENCH MODE */
+  body.fr-mode { font-family: 'Raleway', sans-serif; direction: ltr; }
+  body.fr-mode .nav-links { flex-direction: row-reverse; }
+  body.fr-mode nav { flex-direction: row-reverse; }
+  body.fr-mode .lang-bar { justify-content: flex-start; }
+
+  .ar-text { display: block; }
+  .fr-text { display: none; }
+  body.fr-mode .ar-text { display: none; }
+  body.fr-mode .fr-text { display: block; }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    nav { padding: 20px 20px; flex-direction: column; gap: 20px; }
+    .nav-links { display: none; }
+    section { padding: 60px 20px; }
+    .doctors-grid { grid-template-columns: 1fr; }
+    .wifak-grid, .labs-grid { grid-template-columns: 1fr; }
+    .imaging-card { grid-template-columns: 1fr; }
+    .map-container { grid-template-columns: 1fr; }
+    .hero-stats { gap: 30px; }
+    .lang-bar { padding: 8px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- LANG BAR -->
+<div class="lang-bar">
+  <button class="lang-btn active" onclick="setLang('ar')">العربية</button>
+  <button class="lang-btn" onclick="setLang('fr')">Français</button>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+
+  <nav>
+    <div class="nav-logo">
+      <div class="logo-icon">CW</div>
+      <div>
+        <div class="logo-text-ar ar-text">المجمع الطبي الوفاق</div>
+        <div class="logo-text-ar fr-text">Complexe Médical Al Wifak</div>
+        <div class="logo-text-fr ar-text">Complexe Médical Al Wifak</div>
+        <div class="logo-text-fr fr-text">حي أول نوفمبر — الوادي</div>
+      </div>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#clinics-section" onclick="showDept('clinics')">
+        <span class="ar-text">العيادات</span><span class="fr-text">Cliniques</span>
+      </a></li>
+      <li><a href="#wifak-section" onclick="showDept('wifak')">
+        <span class="ar-text">الوفاق</span><span class="fr-text">Al Wifak</span>
+      </a></li>
+      <li><a href="#labs-section" onclick="showDept('labs')">
+        <span class="ar-text">المخابر</span><span class="fr-text">Laboratoires</span>
+      </a></li>
+      <li><a href="#imaging-section" onclick="showDept('imaging')">
+        <span class="ar-text">التصوير</span><span class="fr-text">Imagerie</span>
+      </a></li>
+    </ul>
+  </nav>
+
+  <div class="hero-content">
+    <div class="hero-badge ar-text">🏥 مجمع طبي متكامل — الوادي</div>
+    <div class="hero-badge fr-text">🏥 Complexe Médical Intégré — El Oued</div>
+
+    <h1 class="hero-title-ar ar-text">المجمع الطبي <span>الوفاق</span></h1>
+    <h1 class="hero-title-ar fr-text">Complexe Médical <span style="color:var(--gold)">Al Wifak</span></h1>
+
+    <p class="hero-title-fr ar-text">COMPLEXE MÉDICAL AL WIFAK</p>
+    <p class="hero-title-fr fr-text">رعاية صحية شاملة وعالية الجودة</p>
+
+    <div class="hero-hours">
+      <div class="hours-dot"></div>
+      <span class="ar-text">⏰ مفتوح يومياً من 6:30 صباحاً إلى 8:00 مساءً</span>
+      <span class="fr-text">⏰ Ouvert tous les jours de 6h30 à 20h00</span>
+    </div>
+
+    <div class="hero-stats">
+      <div class="stat">
+        <div class="stat-num">16</div>
+        <div class="stat-label ar-text">طبيب متخصص</div>
+        <div class="stat-label fr-text">Médecins spécialistes</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">4</div>
+        <div class="stat-label ar-text">أقسام طبية</div>
+        <div class="stat-label fr-text">Départements médicaux</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">8</div>
+        <div class="stat-label ar-text">خدمات تصوير</div>
+        <div class="stat-label fr-text">Services d'imagerie</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    <span class="ar-text">اكتشف</span>
+    <span class="fr-text">Découvrir</span>
+  </div>
+</section>
+
+<!-- DEPT NAV -->
+<div class="dept-nav">
+  <button class="dept-tab active" onclick="showDept('clinics')" id="tab-clinics">
+    <span class="icon">🏥</span>
+    <span class="ar-text">العيادات الطبية</span>
+    <span class="fr-text">Cliniques Médicales</span>
+  </button>
+  <button class="dept-tab" onclick="showDept('wifak')" id="tab-wifak">
+    <span class="icon">👁️</span>
+    <span class="ar-text">مصحة الوفاق</span>
+    <span class="fr-text">Clinique Al Wifak</span>
+  </button>
+  <button class="dept-tab" onclick="showDept('labs')" id="tab-labs">
+    <span class="icon">🔬</span>
+    <span class="ar-text">المخابر</span>
+    <span class="fr-text">Laboratoires</span>
+  </button>
+  <button class="dept-tab" onclick="showDept('imaging')" id="tab-imaging">
+    <span class="icon">📡</span>
+    <span class="ar-text">مركز التصوير</span>
+    <span class="fr-text">Centre d'Imagerie</span>
+  </button>
+</div>
+
+<!-- SECTION 1: CLINICS -->
+<section class="dept-section active" id="clinics-section">
+  <div class="section-header">
+    <span class="section-tag ar-text">القسم الأول</span>
+    <span class="section-tag fr-text">DÉPARTEMENT 1</span>
+    <h2 class="section-title-ar ar-text">العيادات الطبية المتخصصة</h2>
+    <h2 class="section-title-ar fr-text">Cliniques Médicales Spécialisées</h2>
+    <p class="section-title-fr ar-text">CLINIQUES MÉDICALES SPÉCIALISÉES</p>
+    <p class="section-title-fr fr-text">نخبة من أمهر الأطباء المتخصصين</p>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="doctors-grid">
+
+    <!-- DR 1 -->
+    <div class="doctor-card">
+      <div class="card-header">
+        <div class="room-badge ar-text">غرفة 01</div>
+        <div class="room-badge fr-text">Cabinet 01</div>
+        <div class="doctor-avatar">🩺</div>
+        <div class="doctor-name">د. سلطاني محمد</div>
+        <div class="doctor-specialty ar-text">أمراض الكلى وتصفية الدم</div>
+        <div class="doctor-specialty fr-text">Néphrologie & Hémodialyse</div>
+      </div>
+      <div class="card-body">
+        <ul class="services-list">
+          <li class="ar-text">متابعة مضاعفات الأمراض المزمنة</li>
+          <li class="ar-text">متابعة زراعة الكلى</li>
+          <li class="fr-text">Suivi des complications des maladies chroniques</li>
+          <li class="fr-text">Suivi de greffe rénale</li>
+        </ul>
+        <div class="card-info">
+          <div class="info-row">
+            <div class="info-icon">🕐</div>
+            <div class="info-text ar-text">س–أ: 8:00–16:00 | خميس: 8:00–12:00</div>
+            <div class="info-text fr-text">Sam–Mer: 8h–16h | Jeu: 8h–12h</div>
+          </div>
+          <div class="info-row">
+            <div class="info-icon">📞</div>
+            <div class="info-text">030 36 48 15 / 0675 93 47 74</div>
+          </div>
+        </div>
+        <a href="tel:0303648 15" class="call-btn">
+          📞 <span class="ar-text">اتصل بالعيادة</span><span class="fr-text">Appeler la clinique</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- DR 2 -->
+    <div class="doctor-card">
+      <div class="card-header">
+        <div class="room-badge ar-text">غرفة 02</div>
+        <div class="room-badge fr-text">Cabinet 02</div>
+        <div class="doctor-avatar">🫁</div>
+        <div class="doctor-name">د. خلف منير</div>
+        <div class="doctor-specialty ar-text">أمراض الجهاز الهضمي والكبد</div>
+        <div class="doctor-specialty fr-text">Gastro-entérologie & Hépatologie</div>
+      </div>
+      <div class="card-body">
+        <ul class="services-list">
+          <li class="ar-text">أمراض المعدة والقولون العصبي</li>
+          <li class="ar-text">البواسير والبنكرياس والتنظير الباطني</li>
+          <li class="fr-text">Maladies de l'estomac et du côlon</li>
+          <li class="fr-text">Hémorroïdes, pancréas et endoscopie</li>
+        </ul>
+        <div class="card-info">
+          <div class="info-row">
+            <div class="info-icon">🕐</div>
+            <div class="info-text ar-text">س–أ: 8:00–14:00 | خميس: 8:00–12:00</div>
+            <div class="info-text fr-text">Sam–Mer: 8h–14h | Jeu: 8h–12h</div>
+          </div>
+          <div class="info-row">
+            <div class="info-icon">📞</div>
+            <div class="info-text">030 36 48 17 / 0673 81 70 29</div>
+          </div>
+        </div>
+        <a href="tel:0303648 17" class="call-btn">
+          📞 <span class="ar-text">اتصل بالعيادة</span><span class="fr-text">Appeler la clinique</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- DR 3 -->
+    <div class="doctor-card">
+      <div class="card-header">
+        <div class="room-badge ar-text">غرفة 05</div>
+        <div class="room-badge fr-text">Cabinet 05</div>
+        <div class="doctor-avatar">🦋</div>
+        <div class="doctor-name">د. غريسي عبد القادر</div>
+        <div class="doctor-specialty ar-text">أمراض الغدد الصماء وداء السكري</div>
+        <div class="doctor-specialty fr-text">Endocrinologie & Diabétologie</div>
+      </div>
+      <div class="card-body">
+        <ul class="services-list">
+          <li class="ar-text">علاج أمراض الغدة الدرقية والنخامية والكظرية</li>
+          <li class="ar-text">متابعة سكري الحمل واضطراب النمو لدى الأطفال</li>
+          <li class="fr-text">Thyroïde, hypophyse et surrénales</li>
+          <li class="fr-text">Diabète gestationnel & troubles de croissance</li>
+        </ul>
+        <div class="card-info">
+          <div class="info-row">
+            <div class="info-icon">🕐</div>
+            <div class="info-text ar-text">س–أ: 8:00–16:00 | خميس: 8:00–12:00</div>
+            <div class="info-text fr-text">Sam–Mer: 8h–16h | Jeu: 8h–12h</div>
+          </div>
+          <div class="info-row">
+            <div class="info-icon">📞</div>
+            <div class="info-text">030 36 48 22 / 0666 98 22 44</div>
+          </div>
+        </div>
+        <a href="tel:0303648 22" class="call-btn">
+          📞 <span class="ar-text">اتصل بالعيادة</span><span class="fr-text">Appeler la clinique</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- DR 4 -->
+    <div class="doctor-card">
+      <div class="card-header">
+        <div class="room-badge ar-text">غرفة 11</div>
+        <div class="room-badge fr-text">Cabinet 11</div>
+        <div class="doctor-avatar">🧠</div>
+        <div class="doctor-name">د. شقور سالم</div>
+        <div class="doctor-specialty ar-text">جراحة المخ والنخاع الشوكي</div>
+        <div class="doctor-specialty fr-text">Neurochirurgie</div>
+      </div>
+      <div class="card-body">
+        <ul class="services-list">
+          <li class="ar-text">أورام الرأس والعمود الفقري</li>
+          <li class="ar-text">الانزلاق الغضروفي — جراحة سبينا بيفيدا</li>
+          <li class="fr-text">Tumeurs du crâne et de la colonne vertébrale</li>
+          <li class="fr-text">Hernie discale — Spina bifida — Douleurs</li>
+        </ul>
+        <div class="card-info">
+          <div class="info-row">
+            <div class="info-icon">🕐</div>
+            <div class="info-text ar-text">س–أ: 8:00–14:00 | خميس: 8:00–12:00</div>
+            <div class="info-text fr-text">Sam–Mer: 8h–14h | Jeu: 8h–12h</div>
+          </div>
+          <div class="info-row">
+            <div class="info-icon">📞</div>
+            <div class="info-text">030 36 48 35 / 0770 762 761</div>
+          </div>
+        </div>
+        <a href="tel:0303648 35" class="call-btn">
+          📞 <span class="ar-text">اتصل بالعيادة</span><span class="fr-text">Appeler la clinique</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- DR 5 -->
+    <div class="doctor-card">
+      <div class="card-header">
+        <div class="room-badge ar-text">غرفة 12</div>
+        <div class="room-badge fr-text">Cabinet 12</div>
+        <div class="doctor-avatar">❤️</div>
+        <div class="doctor-name">د. لحلوح عبد الحفيظ</div>
+        <div class="doctor-specialty ar-text">باطنية وأمراض القلب والشرايين</div>
+        <div class="doctor-specialty fr-text">Médecine Interne & Cardiologie</div>
+      </div>
+      <div class="card-body">
+        <ul class="services-list">
+          <li class="ar-text">تشخيص وعلاج الضغط الدموي</li>
+          <li class="ar-text">علاج الدوالي بالليزر</li>
+          <li class="fr-text">Hypertension artérielle et maladies cardiaques</li>
+          <li class="fr-text">Traitement des varices au laser</li>
+        </ul>
+        <div class="card-info">
+          <div class="info-row">
+            <div class="info-icon">🕐</div>
+            <div class="info-text ar-text">السبت إلى الخميس: 7:00–17:00</div>
+            <div class="info-text fr-text">Sam–Jeu: 7h–17h</div>
+          </div>
+          <div class="info-row">
+            <div class="info-icon">📞</div>
+            <div class="info-text">030 36 48 44 / 0671 06 96 16 / 0551 99 53 39</div>
+          </div>
+        </div>
+        <a href="tel:0303648 44" class="call-btn">
+          📞 <span class="ar-text">اتصل بالعيادة</span><span class="fr-text">Appeler la clinique</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- DR 6 -->
+    <div class="doctor-card">
+      <div class="card-header">
+        <div class="room-badge ar-text">غرفة 13</div>
+        <div class="room-badge fr-text">Cabinet 13</div>
+        <div class="doctor-avatar">🔪</div>
+        <div class="doctor-name">د. خليف ثابت</div>
+        <div class="doctor-specialty ar-text">الجراحة العامة بالمنظار والليزر</div>
+        <div class="doctor-specialty fr-text">Chirurgie Générale — Laparoscopie & Laser</div>
+      </div>
+      <div class="card-body">
+        <ul class="services-list">
+          <li class="ar-text">جراحة الجهاز الهضمي — الفتق — المرارة — البواسير</li>
+          <li class="ar-text">جراحة الثدي والغدة الدرقية والأورام</li>
+          <li class="fr-text">Digestif, hernie, vésicule biliaire, hémorroïdes</li>
+          <li class="fr-text">Sein, thyroïde et tumeurs</li>
+        </ul>
+        <div class="card-info">
+          <div class="info-row">
+            <div class="info-icon">🕐</div>
+            <div class="info-text ar-text">س–أ: 8:00–15:00 | خميس: 8:00–12:00</div>
+            <div class="info-text fr-text">Sam–Mer: 8h–15h | Jeu: 8h–12h</div>
+          </div>
+          <div class="info-row">
+            <div class="info-icon">📞</div>
+            <div class="info-text">030 36 48 54 / 0783 08 93 93</div>
+          </div>
+        </div>
+        <a href="tel:0303648 54" class="call-btn">
+          📞 <span class="ar-text">اتصل بالعيادة</span><span class="fr-text">Appeler la clinique</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- DR 7 -->
+    <div class="doctor-card">
+      <div class="card-header">
+        <div class="room-badge ar-text">غرفة 15</div>
+        <div class="room-badge fr-text">Cabinet 15</div>
+        <div class="doctor-avatar">🧘</div>
+        <div class="doctor-name">د. قدوري عثمان</div>
+        <div class="doctor-specialty ar-text">الأمراض النفسية والعقلية</div>
+        <div class="doctor-specialty fr-text">Psychiatrie & Santé Mentale</div>
+      </div>
+      <div class="card-body">
+        <ul class="services-list">
+          <li class="ar-text">اضطرابات المزاج والاكتئاب والوسواس القهري</li>
+          <li class="ar-text">الاضطرابات النفسية الجسدية والذهان</li>
+          <li class="fr-text">Troubles de l'humeur, dépression, TOC</li>
+          <li class="fr-text">Troubles psychosomatiques et psychose</li>
+        </ul>
+        <div class="card-info">
+          <div class="info-row">
+            <div class="info-icon">📅</div>
+            <div class="info-text ar-text">بموعد مسبق | س–أ: 8:00–13:30 | خميس: 8:00–12:00</div>
+            <div class="info-text fr-text">Sur RDV | Sam–Mer: 8h–13h30 | Jeu: 8h–12h</div>
+          </div>
+          <div class="info-row">
+            <div class="info-icon">📞</div>
+            <div class="info-text">030 36 48 90 / 0660 35 18 18</div>
+          </div>
+        </div>
+        <a href="tel:0303648 90" class="call-btn">
+          📞 <span class="ar-text">اتصل بالعيادة</span><span class="fr-text">Appeler la clinique</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- DR 8 -->
+    <div class="doctor-card">
+      <div class="card-header">
+        <div class="room-badge ar-text">غرفة 16</div>
+        <div class="room-badge fr-text">Cabinet 16</div>
+        <div class="doctor-avatar">🫘</div>
+        <div class="doctor-name">د. مديني صلاح الدين</div>
+        <div class="doctor-specialty ar-text">جراحة الكلى والمسالك البولية</div>
+        <div class="doctor-specialty fr-text">Urologie & Chirurgie Rénale</div>
+      </div>
+      <div class="card-body">
+        <ul class="services-list">
+          <li class="ar-text">جراحة بالمنظار للمجاري البولية وتفتيت الحصى بالليزر</li>
+          <li class="ar-text">جراحة البروستاتا والمثانة والجهاز التناسلي</li>
+          <li class="fr-text">Endoscopie urinaire, lithotritie laser</li>
+          <li class="fr-text">Prostate, vessie et appareil reproducteur</li>
+        </ul>
+        <div class="card-info">
+          <div class="info-row">
+            <div class="info-icon">🕐</div>
+            <div class="info-text ar-text">س–أ: 8:00–14:00 | خميس: 8:00–12:00</div>
+            <div class="info-text fr-text">Sam–Mer: 8h–14h | Jeu: 8h–12h</div>
+          </div>
+          <div class="info-row">
+            <div class="info-icon">📞</div>
+            <div class="info-text">030 36 48 72 / 0661 10 16 09</div>
+          </div>
+        </div>
+        <a href="tel:0303648 72" class="call-btn">
+          📞 <span class="ar-text">اتصل بالعيادة</span><span class="fr-text">Appeler la clinique</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- DR 9 -->
+    <div class="doctor-card">
+      <div class="card-header">
+        <div class="room-badge ar-text">غرفة 21</div>
+        <div class="room-badge fr-text">Cabinet 21</div>
+        <div class="doctor-avatar">💉</div>
+        <div class="doctor-name">د. مجور توفيق</div>
+        <div class="doctor-specialty ar-text">التخذير والإنعاش</div>
+        <div class="doctor-specialty fr-text">Anesthésie-Réanimation</div>
+      </div>
+      <div class="card-body">
+        <ul class="services-list">
+          <li class="ar-text">متابعة وعلاج الأمراض المزمنة وضغط الدم</li>
+          <li class="ar-text">إيكوغرافي القلب والشرايين</li>
+          <li class="fr-text">Suivi maladies chroniques & hypertension</li>
+          <li class="fr-text">Échocardiographie et vaisseaux</li>
+        </ul>
+        <div class="card-info">
+          <div class="info-row">
+            <div class="info-icon">🕐</div>
+            <div class="info-text ar-text">س–أ: 8:00–14:00 | خميس: 8:00–12:00</div>
+            <div class="info-text fr-text">Sam–Mer: 8h–14h | Jeu: 8h–12h</div>
+          </div>
+          <div class="info-row">
+            <div class="info-icon">📞</div>
+            <div class="info-text">030 36 48 74 / 0553 02 08 27</div>
+          </div>
+        </div>
+        <a href="tel:0303648 74" class="call-btn">
+          📞 <span class="ar-text">اتصل بالعيادة</span><span class="fr-text">Appeler la clinique</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- DR 10 -->
+    <div class="doctor-card">
+      <div class="card-header">
+        <div class="room-badge ar-text">غرفة 23</div>
+        <div class="room-badge fr-text">Cabinet 23</div>
+        <div class="doctor-avatar">🦴</div>
+        <div class="doctor-name">د. جوادي أحمد</div>
+        <div class="doctor-specialty ar-text">جراحة العظام والمفاصل</div>
+        <div class="doctor-specialty fr-text">Orthopédie & Traumatologie</div>
+      </div>
+      <div class="card-body">
+        <ul class="services-list">
+          <li class="ar-text">جراحة الكسور والتشوهات الخلقية في الأطراف</li>
+          <li class="ar-text">جراحة العمود الفقري والإصابات الرياضية</li>
+          <li class="fr-text">Fractures, malformations congénitales</li>
+          <li class="fr-text">Colonne vertébrale et traumatismes sportifs</li>
+        </ul>
+        <div class="card-info">
+          <div class="info-row">
+            <div class="info-icon">🕐</div>
+            <div class="info-text ar-text">س–أ: 8:00–14:00 | خميس: 8:00–12:00</div>
+            <div class="info-text fr-text">Sam–Mer: 8h–14h | Jeu: 8h–12h</div>
+          </div>
+          <div class="info-row">
+            <div class="info-icon">📞</div>
+            <div class="info-text">030 36 48 81 / 0696 40 40 88</div>
+          </div>
+        </div>
+        <a href="tel:0303648 81" class="call-btn">
+          📞 <span class="ar-text">اتصل بالعيادة</span><span class="fr-text">Appeler la clinique</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- DR 11 -->
+    <div class="doctor-card">
+      <div class="card-header">
+        <div class="room-badge ar-text">غرفة 24</div>
+        <div class="room-badge fr-text">Cabinet 24</div>
+        <div class="doctor-avatar">👶</div>
+        <div class="doctor-name">د. خليف سفيان</div>
+        <div class="doctor-specialty ar-text">جراحة الأطفال</div>
+        <div class="doctor-specialty fr-text">Chirurgie Pédiatrique</div>
+      </div>
+      <div class="card-body">
+        <ul class="services-list">
+          <li class="ar-text">جراحة الجهاز الهضمي والعظام والتشوهات الخلقية</li>
+          <li class="ar-text">جراحة المسالك البولية والفتق والختان بدون ألم</li>
+          <li class="fr-text">Digestif, orthopédie, malformations</li>
+          <li class="fr-text">Voies urinaires, hernie, circoncision sans douleur</li>
+        </ul>
+        <div class="card-info">
+          <div class="info-row">
+            <div class="info-icon">🕐</div>
+            <div class="info-text ar-text">س–أ: 8:00–14:00 | خميس: 8:00–12:00</div>
+            <div class="info-text fr-text">Sam–Mer: 8h–14h | Jeu: 8h–12h</div>
+          </div>
+          <div class="info-row">
+            <div class="info-icon">📞</div>
+            <div class="info-text">030 36 48 86 / 0541 45 81 29</div>
+          </div>
+        </div>
+        <a href="tel:0303648 86" class="call-btn">
+          📞 <span class="ar-text">اتصل بالعيادة</span><span class="fr-text">Appeler la clinique</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- DR 12 -->
+    <div class="doctor-card">
+      <div class="card-header">
+        <div class="room-badge ar-text">غرفة 26</div>
+        <div class="room-badge fr-text">Cabinet 26</div>
+        <div class="doctor-avatar">🤱</div>
+        <div class="doctor-name">د. بقاق حرم ع.م</div>
+        <div class="doctor-specialty ar-text">أمراض النساء والتوليد</div>
+        <div class="doctor-specialty fr-text">Gynécologie & Obstétrique</div>
+      </div>
+      <div class="card-body">
+        <ul class="services-list">
+          <li class="ar-text">متابعة الحمل وتخطيط قلب الجنين</li>
+          <li class="ar-text">تنظير عنق الرحم والكشف الدقيق للأورام — جراحة بالمنظار</li>
+          <li class="fr-text">Suivi grossesse, monitoring fœtal</li>
+          <li class="fr-text">Colposcopie, dépistage tumeurs, cœlioscopie</li>
+        </ul>
+        <div class="card-info">
+          <div class="info-row">
+            <div class="info-icon">🕐</div>
+            <div class="info-text ar-text">السبت إلى الخميس: 8:00–16:00</div>
+            <div class="info-text fr-text">Sam–Jeu: 8h–16h</div>
+          </div>
+          <div class="info-row">
+            <div class="info-icon">📞</div>
+            <div class="info-text">030 36 48 60 / 0675 78 32 60</div>
+          </div>
+        </div>
+        <a href="tel:0303648 60" class="call-btn">
+          📞 <span class="ar-text">اتصل بالعيادة</span><span class="fr-text">Appeler la clinique</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- DR 13 -->
+    <div class="doctor-card">
+      <div class="card-header">
+        <div class="room-badge ar-text">غرفة 35</div>
+        <div class="room-badge fr-text">Cabinet 35</div>
+        <div class="doctor-avatar">🧸</div>
+        <div class="doctor-name">د. الحسين مليك</div>
+        <div class="doctor-specialty ar-text">طب الأطفال وحديثي الولادة</div>
+        <div class="doctor-specialty fr-text">Pédiatrie & Néonatologie</div>
+      </div>
+      <div class="card-body">
+        <ul class="services-list">
+          <li class="ar-text">فحوصات ومتابعة شاملة للطفل من الولادة حتى 16 سنة</li>
+          <li class="ar-text">إيكوغرافيا للأطفال — الأشعة فوق الصوتية</li>
+          <li class="fr-text">Suivi complet de la naissance à 16 ans</li>
+          <li class="fr-text">Échographie pédiatrique — Urgences pédiatriques</li>
+        </ul>
+        <div class="card-info">
+          <div class="info-row">
+            <div class="info-icon">🕐</div>
+            <div class="info-text ar-text">س–خ: 8:00–14:00 / 16:00–22:00</div>
+            <div class="info-text fr-text">Sam–Jeu: 8h–14h / 16h–22h</div>
+          </div>
+          <div class="info-row">
+            <div class="info-icon">📞</div>
+            <div class="info-text">030 36 48 93 / 0657 92 90 90</div>
+          </div>
+        </div>
+        <a href="tel:0303648 93" class="call-btn">
+          📞 <span class="ar-text">اتصل بالعيادة</span><span class="fr-text">Appeler la clinique</span>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SECTION 2: WIFAK -->
+<section class="dept-section" id="wifak-section" style="background:white;">
+  <div class="section-header">
+    <span class="section-tag ar-text">القسم الثاني</span>
+    <span class="section-tag fr-text">DÉPARTEMENT 2</span>
+    <h2 class="section-title-ar ar-text">مصحة الوفاق — ORL & Ophtalmologie</h2>
+    <h2 class="section-title-ar fr-text">Clinique Al Wifak — ORL & Ophtalmologie</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="wifak-grid">
+    <!-- ORL -->
+    <div class="wifak-card">
+      <div class="wifak-icon">👂</div>
+      <div class="wifak-name">د. سويد محمد العيد</div>
+      <div class="wifak-spec ar-text">طب وجراحة الأنف والأذن والحنجرة والوجه — جراحة بالمنظار</div>
+      <div class="wifak-spec fr-text">ORL — Chirurgie cervico-faciale & Endoscopique</div>
+      <div style="margin-bottom:20px">
+        <div class="info-row" style="color:rgba(255,255,255,0.6);font-size:13px;margin-bottom:8px">
+          <span>📧 clinicalwifak.orl@gmail.com</span>
+        </div>
+      </div>
+      <a href="tel:0303644 88" class="wifak-call">
+        📞 030 36 44 88 / 0555 30 38 57 / 0799 38 38 38
+      </a>
+    </div>
+
+    <!-- OPHTALMOLOGIE -->
+    <div class="wifak-card">
+      <div class="wifak-icon">👁️</div>
+      <div class="wifak-name">د. حمادي علي</div>
+      <div class="wifak-spec ar-text">طب وجراحة العيون</div>
+      <div class="wifak-spec fr-text">Ophtalmologie & Chirurgie Oculaire</div>
+      <div style="margin-bottom:20px">
+        <div class="info-row" style="color:rgba(255,255,255,0.6);font-size:13px;margin-bottom:8px">
+          <span>📧 clinicalwifak.oph@gmail.com</span>
+        </div>
+      </div>
+      <a href="tel:0303644 77" class="wifak-call">
+        📞 030 36 44 77 / 0668 08 13 48 / 0556 76 94 09
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 3: LABS -->
+<section class="dept-section" id="labs-section" style="background:var(--off-white)">
+  <div class="section-header">
+    <span class="section-tag ar-text">القسم الثالث</span>
+    <span class="section-tag fr-text">DÉPARTEMENT 3</span>
+    <h2 class="section-title-ar ar-text">مخابر التحاليل الطبية</h2>
+    <h2 class="section-title-ar fr-text">Laboratoires d'Analyses Médicales</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="labs-grid">
+    <!-- LAB 1 -->
+    <div class="lab-card">
+      <div class="lab-icon">🩸</div>
+      <div class="lab-name">د. خليف عمار</div>
+      <div class="lab-spec ar-text">مخبر أمراض الدم — Laboratoire d'Hématologie</div>
+      <div class="lab-spec fr-text">Laboratoire d'Hématologie</div>
+      <ul class="lab-services">
+        <li class="ar-text">تشخيص وعلاج فقر الدم</li>
+        <li class="ar-text">أمراض الطحال والغدد اللمفاوية</li>
+        <li class="ar-text">أمراض تجلط الدم — تحاليل طبية</li>
+        <li class="fr-text">Anémies, splénomégalie, lymphomes</li>
+        <li class="fr-text">Troubles de coagulation — Analyses médicales</li>
+      </ul>
+      <div class="card-info">
+        <div class="info-row">
+          <div class="info-icon">📍</div>
+          <div class="info-text ar-text">الطابق الأرضي — عيادة رقم 03</div>
+          <div class="info-text fr-text">Rez-de-chaussée — Cabinet 03</div>
+        </div>
+        <div class="info-row">
+          <div class="info-icon">📞</div>
+          <div class="info-text">030 36 48 19 / 0657 20 10 10</div>
+        </div>
+      </div>
+      <a href="tel:0303648 19" class="call-btn" style="margin-top:16px">
+        📞 <span class="ar-text">اتصل بالمخبر</span><span class="fr-text">Appeler le laboratoire</span>
+      </a>
+    </div>
+
+    <!-- LAB 2 -->
+    <div class="lab-card">
+      <div class="lab-icon">🔬</div>
+      <div class="lab-name">د. حميده عثمان</div>
+      <div class="lab-spec ar-text">مخبر الأنسجة والخلايا — Anatomopathologie</div>
+      <div class="lab-spec fr-text">Laboratoire d'Anatomopathologie</div>
+      <ul class="lab-services">
+        <li class="ar-text">التشريح المرضي للأنسجة</li>
+        <li class="ar-text">تحليل الخلايا وتشخيص الأورام</li>
+        <li class="fr-text">Anatomopathologie tissulaire</li>
+        <li class="fr-text">Cytologie et diagnostic des tumeurs</li>
+      </ul>
+      <div class="card-info">
+        <div class="info-row">
+          <div class="info-icon">📍</div>
+          <div class="info-text ar-text">غرفة 42</div>
+          <div class="info-text fr-text">Cabinet 42</div>
+        </div>
+        <div class="info-row">
+          <div class="info-icon">🕐</div>
+          <div class="info-text ar-text">السبت إلى الخميس: 8:00–16:00</div>
+          <div class="info-text fr-text">Sam–Jeu: 8h–16h</div>
+        </div>
+        <div class="info-row">
+          <div class="info-icon">📞</div>
+          <div class="info-text">030 36 48 98 / 0657 51 15 05</div>
+        </div>
+      </div>
+      <a href="tel:0303648 98" class="call-btn" style="margin-top:16px">
+        📞 <span class="ar-text">اتصل بالمخبر</span><span class="fr-text">Appeler le laboratoire</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 4: IMAGING -->
+<section class="dept-section" id="imaging-section" style="background:white;">
+  <div class="section-header">
+    <span class="section-tag ar-text">القسم الرابع</span>
+    <span class="section-tag fr-text">DÉPARTEMENT 4</span>
+    <h2 class="section-title-ar ar-text">مركز التصوير الطبي</h2>
+    <h2 class="section-title-ar fr-text">Centre de Diagnostic Médical</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="imaging-card">
+    <div class="imaging-left">
+      <div class="imaging-logo-text">CDM AL WIFAK</div>
+      <div class="imaging-title ar-text">مركز الوفاق للتشخيص الطبي</div>
+      <div class="imaging-title fr-text">Centre de Diagnostic Médical Al Wifak</div>
+      <div class="imaging-subtitle">CENTRE DE DIAGNOSTIC MÉDICAL</div>
+      <div class="imaging-contact">
+        <div class="contact-item">
+          <div class="contact-icon">📞</div>
+          <span>030.36.47.47</span>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📱</div>
+          <span>0784.84.84.97 / 0784.84.84.27</span>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📧</div>
+          <span>cdmalwifak39@gmail.com</span>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📍</div>
+          <span class="ar-text">حي أول نوفمبر — القرية — الوادي</span>
+          <span class="fr-text">Cité 1er Novembre — El Qaria — El Oued</span>
+        </div>
+      </div>
+    </div>
+    <div class="imaging-right">
+      <h3 class="ar-text">خدماتنا التشخيصية</h3>
+      <h3 class="fr-text">NOS EXPLORATIONS</h3>
+      <ul class="imaging-services">
+        <li><div class="svc-dot"></div>Scanner (TDM)</li>
+        <li><div class="svc-dot"></div>IRM + IRM Cardiaque</li>
+        <li><div class="svc-dot"></div>Échographie + Doppler</li>
+        <li><div class="svc-dot"></div>Radiographie Numérisée</li>
+        <li><div class="svc-dot"></div>Radiographie Spécialisée</li>
+        <li><div class="svc-dot"></div>Mammographie</li>
+        <li><div class="svc-dot"></div>Panoramique Dentaire</li>
+        <li><div class="svc-dot"></div>Imagerie Interventionnelle</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- MAP SECTION -->
+<div class="map-section">
+  <div class="map-container">
+    <div class="map-info">
+      <span class="section-tag" style="text-align:right">
+        <span class="ar-text">موقعنا</span>
+        <span class="fr-text">NOTRE EMPLACEMENT</span>
+      </span>
+      <h2>
+        <span class="ar-text">كيف تصل إلينا؟</span>
+        <span class="fr-text">Comment nous trouver ?</span>
+      </h2>
+      <div class="map-detail">
+        <div class="map-detail-icon">📍</div>
+        <span class="ar-text">حي أول نوفمبر — القرية — الوادي — الجزائر<br>(الطريق المقابل لمستشفى الشط)</span>
+        <span class="fr-text">Cité 1er Novembre — El Qaria — El Oued — Algérie<br>(En face de l'hôpital El Chatt)</span>
+      </div>
+      <div class="map-detail">
+        <div class="map-detail-icon">🕐</div>
+        <span class="ar-text">مفتوح يومياً: 6:30 صباحاً — 8:00 مساءً</span>
+        <span class="fr-text">Ouvert tous les jours: 6h30 — 20h00</span>
+      </div>
+      <div class="map-detail">
+        <div class="map-detail-icon">📞</div>
+        <span>030.36.47.47</span>
+      </div>
+      <a href="https://maps.google.com/?q=9VV9+J6Q+Al+Oued+Algeria" target="_blank" class="map-link">
+        🗺️ <span class="ar-text">فتح على خرائط جوجل</span><span class="fr-text">Ouvrir sur Google Maps</span>
+      </a>
+    </div>
+    <div class="map-embed">
+      <iframe
+        src="https://maps.google.com/maps?q=9VV9%2BJ6Q+El+Oued+Algeria&output=embed&z=16"
+        allowfullscreen
+        loading="lazy">
+      </iframe>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>
+    <span class="ar-text">© 2026 — المجمع الطبي <span>الوفاق</span> — الوادي، الجزائر</span>
+    <span class="fr-text">© 2026 — Complexe Médical <span>Al Wifak</span> — El Oued, Algérie</span>
+  </p>
+</footer>
+
+<script>
+  function showDept(id) {
+    document.querySelectorAll('.dept-section').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('.dept-tab').forEach(t => t.classList.remove('active'));
+    document.getElementById(id + '-section').classList.add('active');
+    document.getElementById('tab-' + id).classList.add('active');
+    document.getElementById(id + '-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  function setLang(lang) {
+    document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+    event.target.classList.add('active');
+    if (lang === 'fr') {
+      document.body.classList.add('fr-mode');
+      document.documentElement.setAttribute('lang', 'fr');
+      document.documentElement.setAttribute('dir', 'ltr');
+    } else {
+      document.body.classList.remove('fr-mode');
+      document.documentElement.setAttribute('lang', 'ar');
+      document.documentElement.setAttribute('dir', 'rtl');
+    }
+  }
+
+  // Smooth nav links
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+    });
+  });
+</script>
+</body>
+</html>
